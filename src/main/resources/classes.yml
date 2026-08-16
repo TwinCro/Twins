@@ -1,0 +1,600 @@
+# Classes Configuration
+# Add new classes here - they will be automatically loaded
+# awakened-class: the class the player transforms into after awakening at level 60
+# Stat scaling: health-per-level, damage-per-level, defense-per-level, mana-per-level
+#   Final stat at level N = base + (per-level * (N - 1))
+
+classes:
+  # ==================== ORIGINAL CLASSES ====================
+
+  warrior:
+    display-name: "&cWarrior"
+    description: "A mighty melee fighter with high health and defense"
+    max-health: 40
+    base-damage: 8
+    base-defense: 5
+    base-mana: 20
+    health-per-level: 2.0
+    damage-per-level: 1.2
+    defense-per-level: 0.8
+    mana-per-level: 0.5
+    skills:
+      - id: warrior_slash
+        unlock-level: 1
+      - id: warrior_shield_bash
+        unlock-level: 5
+      - id: warrior_war_cry
+        unlock-level: 15
+      - id: warrior_whirlwind
+        unlock-level: 30
+      - id: warrior_earthquake
+        unlock-level: 45
+    awakened-class: berserker
+
+  mage:
+    display-name: "&9Mage"
+    description: "A powerful spellcaster with devastating magic damage"
+    max-health: 24
+    base-damage: 12
+    base-defense: 2
+    base-mana: 60
+    health-per-level: 1.2
+    damage-per-level: 1.8
+    defense-per-level: 0.3
+    mana-per-level: 2.0
+    skills:
+      - id: mage_fireball
+        unlock-level: 1
+      - id: mage_frost_nova
+        unlock-level: 5
+      - id: mage_mana_shield
+        unlock-level: 15
+      - id: mage_meteor
+        unlock-level: 30
+      - id: mage_time_warp
+        unlock-level: 45
+    awakened-class: archmage
+
+  archer:
+    display-name: "&aArcher"
+    description: "A nimble ranged fighter with high mobility"
+    max-health: 28
+    base-damage: 10
+    base-defense: 3
+    base-mana: 35
+    health-per-level: 1.5
+    damage-per-level: 1.5
+    defense-per-level: 0.5
+    mana-per-level: 1.0
+    skills:
+      - id: archer_quick_shot
+        unlock-level: 1
+      - id: archer_multishot
+        unlock-level: 5
+      - id: archer_evasion
+        unlock-level: 15
+      - id: archer_arrow_storm
+        unlock-level: 30
+      - id: archer_snipe
+        unlock-level: 45
+    awakened-class: ranger
+
+  healer:
+    display-name: "&dHealer"
+    description: "A supportive class that keeps the party alive"
+    max-health: 26
+    base-damage: 5
+    base-defense: 3
+    base-mana: 70
+    health-per-level: 1.5
+    damage-per-level: 0.8
+    defense-per-level: 0.6
+    mana-per-level: 2.0
+    skills:
+      - id: healer_heal
+        unlock-level: 1
+      - id: healer_blessing
+        unlock-level: 5
+      - id: healer_purify
+        unlock-level: 15
+      - id: healer_divine_light
+        unlock-level: 30
+      - id: healer_resurrection
+        unlock-level: 45
+    awakened-class: cleric
+
+  # ==================== NEW CLASSES ====================
+
+  paladin:
+    display-name: "&f&lPaladin"
+    description: "A holy tank with decent DPS and medium healing capabilities"
+    max-health: 45
+    base-damage: 8
+    base-defense: 8
+    base-mana: 40
+    health-per-level: 2.5
+    damage-per-level: 1.0
+    defense-per-level: 1.2
+    mana-per-level: 1.0
+    skills:
+      - id: paladin_holy_strike
+        unlock-level: 1
+      - id: paladin_divine_shield
+        unlock-level: 5
+      - id: paladin_lay_on_hands
+        unlock-level: 15
+      - id: paladin_consecration
+        unlock-level: 30
+      - id: paladin_judgment_wrath
+        unlock-level: 45
+    awakened-class: templar
+
+  assassin:
+    display-name: "&8&lAssassin"
+    description: "A fast and deadly DPS class that strikes from the shadows"
+    max-health: 26
+    base-damage: 14
+    base-defense: 3
+    base-mana: 30
+    health-per-level: 1.2
+    damage-per-level: 2.0
+    defense-per-level: 0.4
+    mana-per-level: 0.8
+    skills:
+      - id: assassin_shadow_strike
+        unlock-level: 1
+      - id: assassin_dash
+        unlock-level: 5
+      - id: assassin_poison_blade
+        unlock-level: 15
+      - id: assassin_shadow_burst
+        unlock-level: 30
+      - id: assassin_execution
+        unlock-level: 45
+    awakened-class: nightblade
+
+  shaman:
+    display-name: "&2Shaman"
+    description: "A spiritual caster with medium healing and medium DPS"
+    max-health: 28
+    base-damage: 9
+    base-defense: 4
+    base-mana: 55
+    health-per-level: 1.5
+    damage-per-level: 1.2
+    defense-per-level: 0.6
+    mana-per-level: 1.5
+    skills:
+      - id: shaman_lightning_bolt
+        unlock-level: 1
+      - id: shaman_healing_wave
+        unlock-level: 5
+      - id: shaman_earth_shield
+        unlock-level: 15
+      - id: shaman_storm_surge
+        unlock-level: 30
+      - id: shaman_spirit_guardian
+        unlock-level: 45
+    awakened-class: spiritlord
+
+  dragon_warrior:
+    display-name: "&6&lDragon Warrior"
+    description: "A warrior with good DPS, movement skills, and range attacks"
+    max-health: 36
+    base-damage: 12
+    base-defense: 6
+    base-mana: 35
+    health-per-level: 1.8
+    damage-per-level: 1.6
+    defense-per-level: 0.8
+    mana-per-level: 1.0
+    skills:
+      - id: dragon_warrior_dragon_breath
+        unlock-level: 1
+      - id: dragon_warrior_dragon_leap
+        unlock-level: 5
+      - id: dragon_warrior_wing_slash
+        unlock-level: 15
+      - id: dragon_warrior_fire_storm
+        unlock-level: 30
+      - id: dragon_warrior_dragon_fury
+        unlock-level: 45
+    awakened-class: dragon_lord
+
+  bard:
+    display-name: "&e&lBard"
+    description: "Mainly a buffer and debuffer with some healing and DPS"
+    max-health: 26
+    base-damage: 6
+    base-defense: 4
+    base-mana: 60
+    health-per-level: 1.5
+    damage-per-level: 0.9
+    defense-per-level: 0.6
+    mana-per-level: 1.8
+    skills:
+      - id: bard_inspiring_anthem
+        unlock-level: 1
+      - id: bard_healing_melody
+        unlock-level: 5
+      - id: bard_dissonant_chord
+        unlock-level: 15
+      - id: bard_song_of_war
+        unlock-level: 30
+      - id: bard_grand_finale
+        unlock-level: 45
+    awakened-class: maestro
+
+  summoner:
+    display-name: "&5&lSummoner"
+    description: "A male fighter who uses magic to fight, tank, and empower himself"
+    max-health: 40
+    base-damage: 10
+    base-defense: 8
+    base-mana: 45
+    health-per-level: 2.2
+    damage-per-level: 1.3
+    defense-per-level: 1.0
+    mana-per-level: 1.2
+    skills:
+      - id: summoner_arcane_fist
+        unlock-level: 1
+      - id: summoner_stone_armor
+        unlock-level: 5
+      - id: summoner_power_surge
+        unlock-level: 15
+      - id: summoner_earthquake_punch
+        unlock-level: 30
+      - id: summoner_titan_form
+        unlock-level: 45
+    awakened-class: warlock
+
+  reaper:
+    display-name: "&4&lReaper"
+    description: "A melee fighter with dash and long-range lifesteal skills"
+    max-health: 30
+    base-damage: 13
+    base-defense: 4
+    base-mana: 30
+    health-per-level: 1.5
+    damage-per-level: 1.8
+    defense-per-level: 0.5
+    mana-per-level: 0.8
+    skills:
+      - id: reaper_soul_slash
+        unlock-level: 1
+      - id: reaper_shadow_dash
+        unlock-level: 5
+      - id: reaper_soul_harvest
+        unlock-level: 15
+      - id: reaper_death_coil
+        unlock-level: 30
+      - id: reaper_reaper_dance
+        unlock-level: 45
+    awakened-class: deathbringer
+
+  monk:
+    display-name: "&6Monk"
+    description: "A melee fighter with excellent tanking and DPS capabilities"
+    max-health: 38
+    base-damage: 10
+    base-defense: 8
+    base-mana: 30
+    health-per-level: 2.0
+    damage-per-level: 1.5
+    defense-per-level: 1.0
+    mana-per-level: 0.8
+    skills:
+      - id: monk_palm_strike
+        unlock-level: 1
+      - id: monk_iron_body
+        unlock-level: 5
+      - id: monk_chi_burst
+        unlock-level: 15
+      - id: monk_flying_dragon
+        unlock-level: 30
+      - id: monk_enlightenment
+        unlock-level: 45
+    awakened-class: grandmaster
+
+  # ==================== AWAKENED CLASSES ====================
+
+  berserker:
+    display-name: "&4&lBerserker"
+    description: "Awakened Warrior - Unmatched fury and raw power"
+    max-health: 55
+    base-damage: 18
+    base-defense: 10
+    base-mana: 35
+    health-per-level: 3.5
+    damage-per-level: 2.2
+    defense-per-level: 1.2
+    mana-per-level: 0.8
+    skills:
+      - id: berserker_rage
+        unlock-level: 1
+      - id: berserker_ground_slam
+        unlock-level: 5
+      - id: berserker_bloodlust
+        unlock-level: 15
+      - id: berserker_titan_slam
+        unlock-level: 30
+      - id: berserker_apocalypse
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  archmage:
+    display-name: "&1&lArchmage"
+    description: "Awakened Mage - Master of all arcane arts"
+    max-health: 35
+    base-damage: 26
+    base-defense: 5
+    base-mana: 120
+    health-per-level: 1.8
+    damage-per-level: 3.0
+    defense-per-level: 0.5
+    mana-per-level: 3.5
+    skills:
+      - id: archmage_arcane_bolt
+        unlock-level: 1
+      - id: archmage_blizzard
+        unlock-level: 5
+      - id: archmage_arcane_shield
+        unlock-level: 15
+      - id: archmage_black_hole
+        unlock-level: 30
+      - id: archmage_supernova
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  ranger:
+    display-name: "&2&lRanger"
+    description: "Awakened Archer - Deadly precision from any distance"
+    max-health: 42
+    base-damage: 22
+    base-defense: 6
+    base-mana: 55
+    health-per-level: 2.0
+    damage-per-level: 2.5
+    defense-per-level: 0.8
+    mana-per-level: 1.5
+    skills:
+      - id: ranger_piercing_shot
+        unlock-level: 1
+      - id: ranger_volley
+        unlock-level: 5
+      - id: ranger_shadow_step
+        unlock-level: 15
+      - id: ranger_rain_of_arrows
+        unlock-level: 30
+      - id: ranger_death_mark
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  cleric:
+    display-name: "&5&lCleric"
+    description: "Awakened Healer - Divine power to save or smite"
+    max-health: 40
+    base-damage: 15
+    base-defense: 8
+    base-mana: 140
+    health-per-level: 2.0
+    damage-per-level: 1.5
+    defense-per-level: 1.0
+    mana-per-level: 3.5
+    skills:
+      - id: cleric_divine_heal
+        unlock-level: 1
+      - id: cleric_sanctuary
+        unlock-level: 5
+      - id: cleric_cleanse
+        unlock-level: 15
+      - id: cleric_judgment
+        unlock-level: 30
+      - id: cleric_miracle
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  templar:
+    display-name: "&f&l&kA&f&lTemplar"
+    description: "Awakened Paladin - Unbreakable holy warrior with divine wrath"
+    max-health: 60
+    base-damage: 18
+    base-defense: 15
+    base-mana: 55
+    health-per-level: 4.0
+    damage-per-level: 2.0
+    defense-per-level: 1.8
+    mana-per-level: 1.5
+    skills:
+      - id: templar_holy_cleave
+        unlock-level: 1
+      - id: templar_aegis
+        unlock-level: 5
+      - id: templar_divine_heal
+        unlock-level: 15
+      - id: templar_hallowed_ground
+        unlock-level: 30
+      - id: templar_crusade
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  nightblade:
+    display-name: "&8&l&kA&8&lNightblade"
+    description: "Awakened Assassin - Master of death who moves like a shadow"
+    max-health: 38
+    base-damage: 28
+    base-defense: 6
+    base-mana: 45
+    health-per-level: 1.8
+    damage-per-level: 3.5
+    defense-per-level: 0.8
+    mana-per-level: 1.2
+    skills:
+      - id: nightblade_shadow_rip
+        unlock-level: 1
+      - id: nightblade_phase_dash
+        unlock-level: 5
+      - id: nightblade_death_mark
+        unlock-level: 15
+      - id: nightblade_carnage
+        unlock-level: 30
+      - id: nightblade_oblivion
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  spiritlord:
+    display-name: "&2&l&kA&2&lSpiritlord"
+    description: "Awakened Shaman - Commands the spirits of nature itself"
+    max-health: 42
+    base-damage: 20
+    base-defense: 9
+    base-mana: 95
+    health-per-level: 2.5
+    damage-per-level: 2.2
+    defense-per-level: 1.0
+    mana-per-level: 2.5
+    skills:
+      - id: spiritlord_chain_lightning
+        unlock-level: 1
+      - id: spiritlord_spirit_wave
+        unlock-level: 5
+      - id: spiritlord_spirit_shield
+        unlock-level: 15
+      - id: spiritlord_thunderstorm
+        unlock-level: 30
+      - id: spiritlord_ancestral_wrath
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  dragon_lord:
+    display-name: "&6&l&kA&6&lDragon Lord"
+    description: "Awakened Dragon Warrior - Channels the power of ancient dragons"
+    max-health: 50
+    base-damage: 24
+    base-defense: 11
+    base-mana: 55
+    health-per-level: 2.8
+    damage-per-level: 2.8
+    defense-per-level: 1.2
+    mana-per-level: 1.5
+    skills:
+      - id: dragon_lord_inferno_breath
+        unlock-level: 1
+      - id: dragon_lord_sky_dive
+        unlock-level: 5
+      - id: dragon_lord_dragon_claw
+        unlock-level: 15
+      - id: dragon_lord_meteor_storm
+        unlock-level: 30
+      - id: dragon_lord_ancient_wrath
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  maestro:
+    display-name: "&e&l&kA&e&lMaestro"
+    description: "Awakened Bard - A symphony of war, life, and death"
+    max-health: 40
+    base-damage: 15
+    base-defense: 9
+    base-mana: 100
+    health-per-level: 2.0
+    damage-per-level: 1.8
+    defense-per-level: 1.0
+    mana-per-level: 2.5
+    skills:
+      - id: maestro_battle_hymn
+        unlock-level: 1
+      - id: maestro_life_symphony
+        unlock-level: 5
+      - id: maestro_dirge
+        unlock-level: 15
+      - id: maestro_war_anthem
+        unlock-level: 30
+      - id: maestro_apocalypse_crescendo
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  warlock:
+    display-name: "&5&l&kA&5&lWarlock"
+    description: "Awakened Summoner - A magical titan of raw arcane might"
+    max-health: 55
+    base-damage: 22
+    base-defense: 15
+    base-mana: 80
+    health-per-level: 3.5
+    damage-per-level: 2.5
+    defense-per-level: 1.5
+    mana-per-level: 2.0
+    skills:
+      - id: warlock_arcane_barrage
+        unlock-level: 1
+      - id: warlock_iron_skin
+        unlock-level: 5
+      - id: warlock_arcane_empower
+        unlock-level: 15
+      - id: warlock_seismic_fist
+        unlock-level: 30
+      - id: warlock_colossus_form
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  deathbringer:
+    display-name: "&4&l&kA&4&lDeathbringer"
+    description: "Awakened Reaper - Harvests souls with relentless fury"
+    max-health: 45
+    base-damage: 26
+    base-defense: 9
+    base-mana: 50
+    health-per-level: 2.5
+    damage-per-level: 3.0
+    defense-per-level: 1.0
+    mana-per-level: 1.2
+    skills:
+      - id: deathbringer_soul_rend
+        unlock-level: 1
+      - id: deathbringer_void_dash
+        unlock-level: 5
+      - id: deathbringer_soul_tempest
+        unlock-level: 15
+      - id: deathbringer_death_spike
+        unlock-level: 30
+      - id: deathbringer_apocalypse
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true
+
+  grandmaster:
+    display-name: "&6&l&kA&6&lGrandmaster"
+    description: "Awakened Monk - Perfected body, mind, and spirit"
+    max-health: 55
+    base-damage: 22
+    base-defense: 15
+    base-mana: 50
+    health-per-level: 3.0
+    damage-per-level: 2.5
+    defense-per-level: 1.5
+    mana-per-level: 1.2
+    skills:
+      - id: grandmaster_iron_palm
+        unlock-level: 1
+      - id: grandmaster_diamond_body
+        unlock-level: 5
+      - id: grandmaster_chi_eruption
+        unlock-level: 15
+      - id: grandmaster_dragon_ascension
+        unlock-level: 30
+      - id: grandmaster_transcendence
+        unlock-level: 45
+    awakened-class: none
+    is-awakened: true

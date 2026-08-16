@@ -1,0 +1,52 @@
+# Supabase connection
+# Fill in your project URL and anon key from your Supabase dashboard.
+# Or set SUPABASE_URL and SUPABASE_ANON_KEY as environment variables.
+supabase:
+  url: ""
+  anon-key: ""
+
+# Leveling Configuration
+# XP required for each level follows a formula: base * (multiplier ^ level)
+# Max level is 60. After awakening, player resets to level 1 with upgraded class.
+
+leveling:
+  max-level: 60
+  base-xp: 100
+  xp-multiplier: 1.15
+  # XP sources
+  xp-sources:
+    mob-kill:
+      passive: 8
+      hostile: 15
+      boss: 1000
+    dungeon-complete: 500
+    player-kill: 100
+
+# Awakening system
+awakening:
+  # Requires max level (60) to awaken
+  required-level: 60
+  # After awakening, player resets to level 1 with the awakened class
+  reset-level: 1
+  # Bonus stats for awakened players (applied on top of class stats)
+  bonus-health: 50
+  bonus-damage: 20
+  bonus-defense: 10
+  bonus-mana: 50
+
+# Mana regeneration
+mana:
+  base-regen: 5
+  regen-interval-seconds: 2
+
+# Guild system
+guild:
+  starting-chunks: 10
+  expansion-cost: 500
+  # Gold earned from mob kills
+  gold-sources:
+    mob-kill:
+      passive: 2
+      hostile: 5
+      boss: 200
+    dungeon-complete: 100

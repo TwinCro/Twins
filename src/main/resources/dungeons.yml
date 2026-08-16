@@ -1,0 +1,246 @@
+# Dungeons Configuration
+# rank: COMMON, UNCOMMON, RARE, EPIC, LEGENDARY
+# boss: the boss entity configuration
+# mobs: waves of mobs that spawn before the boss
+# loot: chest loot configuration (3 chests spawn after boss is defeated)
+# defense: reduces physical damage; magic-defense: reduces magic damage
+# Difficulty scales automatically with player count:
+#   HP x (1 + 0.5*(players-1)), DMG x (1 + 0.3*(players-1)), DEF x (1 + 0.2*(players-1))
+
+dungeons:
+  skeleton_crypt:
+    display-name: "&fSkeleton Crypt"
+    rank: COMMON
+    min-level: 1
+    max-players: 5
+    spawn-world: world
+    spawn-x: 0
+    spawn-y: 64
+    spawn-z: 0
+    boss:
+      type: SKELETON
+      name: "&fSkeleton King"
+      health: 500
+      damage: 20
+      defense: 15
+      magic-defense: 10
+    mobs:
+      - type: SKELETON
+        count: 8
+        health: 120
+        damage: 12
+        defense: 5
+        magic-defense: 5
+      - type: ZOMBIE
+        count: 4
+        health: 150
+        damage: 10
+        defense: 8
+        magic-defense: 3
+    loot:
+      chest-count: 3
+      table:
+        - item-id: common_sword
+          chance: 40
+        - item-id: common_helmet
+          chance: 30
+        - item-id: common_chestplate
+          chance: 30
+        - item-id: uncommon_sword
+          chance: 10
+        - item-id: key_skeleton_crypt
+          chance: 5
+
+  spider_cave:
+    display-name: "&aSpider Cave"
+    rank: UNCOMMON
+    min-level: 10
+    max-players: 5
+    spawn-world: world
+    spawn-x: 0
+    spawn-y: 64
+    spawn-z: 0
+    boss:
+      type: CAVE_SPIDER
+      name: "&aBrood Mother"
+      health: 1500
+      damage: 35
+      defense: 20
+      magic-defense: 30
+    mobs:
+      - type: CAVE_SPIDER
+        count: 12
+        health: 250
+        damage: 18
+        defense: 10
+        magic-defense: 15
+      - type: SPIDER
+        count: 8
+        health: 200
+        damage: 15
+        defense: 8
+        magic-defense: 10
+    loot:
+      chest-count: 3
+      table:
+        - item-id: uncommon_sword
+          chance: 35
+        - item-id: uncommon_helmet
+          chance: 25
+        - item-id: uncommon_chestplate
+          chance: 25
+        - item-id: rare_sword
+          chance: 10
+        - item-id: key_spider_cave
+          chance: 5
+
+  zombie_crypt:
+    display-name: "&9Zombie Crypt"
+    rank: RARE
+    min-level: 20
+    max-players: 5
+    spawn-world: world
+    spawn-x: 0
+    spawn-y: 64
+    spawn-z: 0
+    boss:
+      type: ZOMBIE
+      name: "&9Necromancer Lord"
+      health: 4000
+      damage: 55
+      defense: 40
+      magic-defense: 60
+    mobs:
+      - type: ZOMBIE
+        count: 15
+        health: 400
+        damage: 22
+        defense: 20
+        magic-defense: 15
+      - type: SKELETON
+        count: 10
+        health: 350
+        damage: 28
+        defense: 15
+        magic-defense: 25
+      - type: ZOMBIE_VILLAGER
+        count: 5
+        health: 500
+        damage: 30
+        defense: 30
+        magic-defense: 20
+    loot:
+      chest-count: 3
+      table:
+        - item-id: rare_sword
+          chance: 30
+        - item-id: rare_helmet
+          chance: 25
+        - item-id: rare_chestplate
+          chance: 25
+        - item-id: epic_sword
+          chance: 10
+        - item-id: key_zombie_crypt
+          chance: 5
+
+  wither_fortress:
+    display-name: "&5Wither Fortress"
+    rank: EPIC
+    min-level: 35
+    max-players: 5
+    spawn-world: world
+    spawn-x: 0
+    spawn-y: 64
+    spawn-z: 0
+    boss:
+      type: WITHER
+      name: "&5Wither King"
+      health: 10000
+      damage: 85
+      defense: 70
+      magic-defense: 100
+    mobs:
+      - type: WITHER_SKELETON
+        count: 12
+        health: 700
+        damage: 38
+        defense: 40
+        magic-defense: 30
+      - type: SKELETON
+        count: 15
+        health: 500
+        damage: 32
+        defense: 30
+        magic-defense: 40
+      - type: BLAZE
+        count: 8
+        health: 600
+        damage: 35
+        defense: 25
+        magic-defense: 60
+    loot:
+      chest-count: 3
+      table:
+        - item-id: epic_sword
+          chance: 30
+        - item-id: epic_helmet
+          chance: 25
+        - item-id: epic_chestplate
+          chance: 25
+        - item-id: legendary_sword
+          chance: 10
+        - item-id: key_wither_fortress
+          chance: 5
+
+  dragon_lair:
+    display-name: "&6Dragon Lair"
+    rank: LEGENDARY
+    min-level: 50
+    max-players: 5
+    spawn-world: world
+    spawn-x: 0
+    spawn-y: 64
+    spawn-z: 0
+    boss:
+      type: WARDEN
+      name: "&6Ancient Dragon"
+      health: 25000
+      damage: 140
+      defense: 100
+      magic-defense: 150
+    mobs:
+      - type: ENDERMAN
+        count: 15
+        health: 1200
+        damage: 50
+        defense: 60
+        magic-defense: 50
+      - type: PHANTOM
+        count: 10
+        health: 800
+        damage: 45
+        defense: 40
+        magic-defense: 70
+      - type: SHULKER
+        count: 8
+        health: 1000
+        damage: 40
+        defense: 80
+        magic-defense: 40
+    loot:
+      chest-count: 3
+      table:
+        - item-id: legendary_sword
+          chance: 25
+        - item-id: legendary_helmet
+          chance: 20
+        - item-id: legendary_chestplate
+          chance: 20
+        - item-id: mythic_blade_of_eternity
+          chance: 5
+        - item-id: mythic_dragonhide_armor
+          chance: 5
+        - item-id: mythic_crown_of_gods
+          chance: 3
+        - item-id: key_dragon_lair
+          chance: 5

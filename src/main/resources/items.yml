@@ -1,0 +1,359 @@
+# Items Configuration
+# rarity: COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC
+# type: SWORD, BOW, STAFF, HELMET, CHESTPLATE, LEGGINGS, BOOTS, ACCESSORY, DUNGEON_KEY
+# stats: damage, defense, magic-defense, health, mana, crit-chance, crit-damage, attack-speed, defense-percent
+# Weapons: SWORD (physical melee), BOW (physical ranged), STAFF (magic caster)
+# Armor: defense reduces physical, magic-defense reduces magic damage
+
+items:
+  # === WEAPONS - SWORDS (Physical melee: Warrior, Paladin, Assassin, Reaper, Monk, Summoner) ===
+  common_sword:
+    display-name: "&fCommon Sword"
+    rarity: COMMON
+    type: SWORD
+    damage: 15
+    attack-speed: 1.6
+  uncommon_sword:
+    display-name: "&aUncommon Sword"
+    rarity: UNCOMMON
+    type: SWORD
+    damage: 35
+    attack-speed: 1.6
+    crit-chance: 5
+  rare_sword:
+    display-name: "&9Rare Sword"
+    rarity: RARE
+    type: SWORD
+    damage: 70
+    attack-speed: 1.7
+    crit-chance: 10
+    crit-damage: 50
+  epic_sword:
+    display-name: "&5Epic Sword"
+    rarity: EPIC
+    type: SWORD
+    damage: 120
+    attack-speed: 1.8
+    crit-chance: 15
+    crit-damage: 75
+  legendary_sword:
+    display-name: "&6Legendary Sword"
+    rarity: LEGENDARY
+    type: SWORD
+    damage: 200
+    attack-speed: 1.8
+    crit-chance: 20
+    crit-damage: 100
+    health: 50
+
+  # === WEAPONS - BOWS (Physical ranged: Archer, Ranger) ===
+  common_bow:
+    display-name: "&fCommon Bow"
+    rarity: COMMON
+    type: BOW
+    damage: 12
+    attack-speed: 1.0
+  uncommon_bow:
+    display-name: "&aUncommon Bow"
+    rarity: UNCOMMON
+    type: BOW
+    damage: 30
+    attack-speed: 1.0
+    crit-chance: 5
+  rare_bow:
+    display-name: "&9Rare Bow"
+    rarity: RARE
+    type: BOW
+    damage: 60
+    attack-speed: 1.1
+    crit-chance: 10
+    crit-damage: 50
+  epic_bow:
+    display-name: "&5Epic Bow"
+    rarity: EPIC
+    type: BOW
+    damage: 100
+    attack-speed: 1.1
+    crit-chance: 15
+    crit-damage: 75
+  legendary_bow:
+    display-name: "&6Legendary Bow"
+    rarity: LEGENDARY
+    type: BOW
+    damage: 170
+    attack-speed: 1.2
+    crit-chance: 20
+    crit-damage: 100
+    mana: 30
+
+  # === WEAPONS - STAVES (Magic caster: Mage, Healer, Shaman, Bard, Dragon Warrior) ===
+  common_staff:
+    display-name: "&fCommon Staff"
+    rarity: COMMON
+    type: STAFF
+    damage: 10
+    mana: 15
+    attack-speed: 1.0
+  uncommon_staff:
+    display-name: "&aUncommon Staff"
+    rarity: UNCOMMON
+    type: STAFF
+    damage: 25
+    mana: 30
+    attack-speed: 1.0
+    crit-chance: 5
+  rare_staff:
+    display-name: "&9Rare Staff"
+    rarity: RARE
+    type: STAFF
+    damage: 50
+    mana: 50
+    attack-speed: 1.0
+    crit-chance: 10
+  epic_staff:
+    display-name: "&5Epic Staff"
+    rarity: EPIC
+    type: STAFF
+    damage: 85
+    mana: 80
+    attack-speed: 1.0
+    crit-chance: 15
+    crit-damage: 75
+  legendary_staff:
+    display-name: "&6Legendary Staff"
+    rarity: LEGENDARY
+    type: STAFF
+    damage: 150
+    mana: 120
+    attack-speed: 1.1
+    crit-chance: 20
+    crit-damage: 100
+
+  # === ARMOR - HELMETS ===
+  common_helmet:
+    display-name: "&fCommon Helmet"
+    rarity: COMMON
+    type: HELMET
+    defense: 8
+    magic-defense: 5
+    health: 15
+  uncommon_helmet:
+    display-name: "&aUncommon Helmet"
+    rarity: UNCOMMON
+    type: HELMET
+    defense: 15
+    magic-defense: 10
+    health: 30
+  rare_helmet:
+    display-name: "&9Rare Helmet"
+    rarity: RARE
+    type: HELMET
+    defense: 25
+    magic-defense: 18
+    health: 50
+    mana: 15
+  epic_helmet:
+    display-name: "&5Epic Helmet"
+    rarity: EPIC
+    type: HELMET
+    defense: 40
+    magic-defense: 28
+    health: 80
+    mana: 30
+  legendary_helmet:
+    display-name: "&6Legendary Helmet"
+    rarity: LEGENDARY
+    type: HELMET
+    defense: 60
+    magic-defense: 42
+    health: 110
+    mana: 45
+    crit-chance: 5
+
+  # === ARMOR - CHESTPLATES ===
+  common_chestplate:
+    display-name: "&fCommon Chestplate"
+    rarity: COMMON
+    type: CHESTPLATE
+    defense: 12
+    magic-defense: 8
+    health: 25
+  uncommon_chestplate:
+    display-name: "&aUncommon Chestplate"
+    rarity: UNCOMMON
+    type: CHESTPLATE
+    defense: 22
+    magic-defense: 15
+    health: 45
+  rare_chestplate:
+    display-name: "&9Rare Chestplate"
+    rarity: RARE
+    type: CHESTPLATE
+    defense: 38
+    magic-defense: 28
+    health: 75
+    mana: 20
+  epic_chestplate:
+    display-name: "&5Epic Chestplate"
+    rarity: EPIC
+    type: CHESTPLATE
+    defense: 60
+    magic-defense: 42
+    health: 110
+    mana: 35
+  legendary_chestplate:
+    display-name: "&6Legendary Chestplate"
+    rarity: LEGENDARY
+    type: CHESTPLATE
+    defense: 85
+    magic-defense: 60
+    health: 150
+    mana: 55
+    defense-percent: 5
+
+  # === ARMOR - LEGGINGS ===
+  common_leggings:
+    display-name: "&fCommon Leggings"
+    rarity: COMMON
+    type: LEGGINGS
+    defense: 10
+    magic-defense: 6
+    health: 20
+  uncommon_leggings:
+    display-name: "&aUncommon Leggings"
+    rarity: UNCOMMON
+    type: LEGGINGS
+    defense: 18
+    magic-defense: 12
+    health: 38
+  rare_leggings:
+    display-name: "&9Rare Leggings"
+    rarity: RARE
+    type: LEGGINGS
+    defense: 30
+    magic-defense: 22
+    health: 60
+    mana: 15
+  epic_leggings:
+    display-name: "&5Epic Leggings"
+    rarity: EPIC
+    type: LEGGINGS
+    defense: 48
+    magic-defense: 35
+    health: 90
+    mana: 30
+  legendary_leggings:
+    display-name: "&6Legendary Leggings"
+    rarity: LEGENDARY
+    type: LEGGINGS
+    defense: 70
+    magic-defense: 50
+    health: 120
+    mana: 45
+
+  # === ARMOR - BOOTS ===
+  common_boots:
+    display-name: "&fCommon Boots"
+    rarity: COMMON
+    type: BOOTS
+    defense: 6
+    magic-defense: 4
+    health: 12
+  uncommon_boots:
+    display-name: "&aUncommon Boots"
+    rarity: UNCOMMON
+    type: BOOTS
+    defense: 12
+    magic-defense: 8
+    health: 25
+  rare_boots:
+    display-name: "&9Rare Boots"
+    rarity: RARE
+    type: BOOTS
+    defense: 20
+    magic-defense: 15
+    health: 42
+    mana: 15
+  epic_boots:
+    display-name: "&5Epic Boots"
+    rarity: EPIC
+    type: BOOTS
+    defense: 32
+    magic-defense: 24
+    health: 65
+    mana: 30
+  legendary_boots:
+    display-name: "&6Legendary Boots"
+    rarity: LEGENDARY
+    type: BOOTS
+    defense: 48
+    magic-defense: 35
+    health: 90
+    mana: 45
+    crit-damage: 25
+
+  # === DUNGEON KEYS (special items that teleport you into dungeons) ===
+  key_skeleton_crypt:
+    display-name: "&eSkeleton Crypt Key"
+    rarity: COMMON
+    type: DUNGEON_KEY
+    dungeon: skeleton_crypt
+    description: "Right-click to enter the Skeleton Crypt dungeon"
+  key_spider_cave:
+    display-name: "&eSpider Cave Key"
+    rarity: UNCOMMON
+    type: DUNGEON_KEY
+    dungeon: spider_cave
+    description: "Right-click to enter the Spider Cave dungeon"
+  key_zombie_crypt:
+    display-name: "&eZombie Crypt Key"
+    rarity: RARE
+    type: DUNGEON_KEY
+    dungeon: zombie_crypt
+    description: "Right-click to enter the Zombie Crypt dungeon"
+  key_wither_fortress:
+    display-name: "&eWither Fortress Key"
+    rarity: EPIC
+    type: DUNGEON_KEY
+    dungeon: wither_fortress
+    description: "Right-click to enter the Wither Fortress dungeon"
+  key_dragon_lair:
+    display-name: "&eDragon Lair Key"
+    rarity: LEGENDARY
+    type: DUNGEON_KEY
+    dungeon: dragon_lair
+    description: "Right-click to enter the Dragon Lair dungeon"
+
+  # === MYTHIC ITEMS (rare drops from legendary dungeons) ===
+  mythic_blade_of_eternity:
+    display-name: "&d&lBlade of Eternity"
+    rarity: MYTHIC
+    type: SWORD
+    damage: 350
+    attack-speed: 2.0
+    crit-chance: 30
+    crit-damage: 150
+    health: 100
+    mana: 50
+    description: "A blade forged in the heart of a dying star"
+  mythic_dragonhide_armor:
+    display-name: "&d&lDragonhide Armor"
+    rarity: MYTHIC
+    type: CHESTPLATE
+    defense: 120
+    magic-defense: 90
+    health: 250
+    mana: 80
+    defense-percent: 15
+    description: "Crafted from the scales of an ancient dragon"
+  mythic_crown_of_gods:
+    display-name: "&d&lCrown of the Gods"
+    rarity: MYTHIC
+    type: HELMET
+    defense: 80
+    magic-defense: 70
+    health: 150
+    mana: 150
+    crit-chance: 15
+    crit-damage: 50
+    description: "Worn by the gods themselves"

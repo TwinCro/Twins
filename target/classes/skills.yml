@@ -1,0 +1,1430 @@
+# Skills Configuration
+# type: ACTIVE (player activates) or PASSIVE (always active)
+# effect: the effect type and its parameters
+
+skills:
+  # === WARRIOR SKILLS ===
+  warrior_slash:
+    display-name: "&cSlash"
+    description: "Deal 15 damage to nearby enemies"
+    type: ACTIVE
+    cooldown: 5
+    mana-cost: 5
+    effect:
+      type: AOE_DAMAGE
+      damage: 15
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 3
+  warrior_shield_bash:
+    display-name: "&cShield Bash"
+    description: "Deal 20 damage and knock back the target"
+    type: ACTIVE
+    cooldown: 8
+    mana-cost: 10
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 20
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      knockback: 1.5
+  warrior_war_cry:
+    display-name: "&cWar Cry"
+    description: "Buff yourself and nearby allies with +5 damage for 10s"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 20
+    effect:
+      type: BUFF
+      buff-type: DAMAGE
+      amount: 5
+      duration: 10
+      radius: 10
+  warrior_whirlwind:
+    display-name: "&cWhirlwind"
+    description: "Spin and deal 25 damage to all enemies within 5 blocks"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 25
+    effect:
+      type: AOE_DAMAGE
+      damage: 25
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 5
+  warrior_earthquake:
+    display-name: "&cEarthquake"
+    description: "Deal 50 damage and slow all enemies in a 7 block radius"
+    type: ACTIVE
+    cooldown: 45
+    mana-cost: 40
+    effect:
+      type: AOE_DAMAGE
+      damage: 50
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 7
+      slow-duration: 5
+
+  # === MAGE SKILLS ===
+  mage_fireball:
+    display-name: "&9Fireball"
+    description: "Launch a fireball dealing 20 damage on impact"
+    type: ACTIVE
+    cooldown: 3
+    mana-cost: 10
+    effect:
+      type: PROJECTILE
+      damage: 20
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      projectile: FIREBALL
+  mage_frost_nova:
+    display-name: "&9Frost Nova"
+    description: "Freeze all enemies within 5 blocks for 3 seconds"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 20
+    effect:
+      type: AOE_EFFECT
+      effect: SLOW
+      duration: 3
+      radius: 5
+  mage_mana_shield:
+    display-name: "&9Mana Shield"
+    description: "Absorb damage using mana for 15 seconds"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 30
+    effect:
+      type: SHIELD
+      duration: 15
+      absorption: 40
+  mage_meteor:
+    display-name: "&9Meteor"
+    description: "Call down a meteor dealing 60 damage in a 6 block radius"
+    type: ACTIVE
+    cooldown: 45
+    mana-cost: 50
+    effect:
+      type: AOE_DAMAGE
+      damage: 60
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 6
+  mage_time_warp:
+    display-name: "&9Time Warp"
+    description: "Slow all nearby enemies and speed up allies for 8 seconds"
+    type: ACTIVE
+    cooldown: 60
+    mana-cost: 45
+    effect:
+      type: AOE_EFFECT
+      effect: SLOW
+      duration: 8
+      radius: 15
+
+  # === ARCHER SKILLS ===
+  archer_quick_shot:
+    display-name: "&aQuick Shot"
+    description: "Fire a quick arrow dealing 15 damage"
+    type: ACTIVE
+    cooldown: 2
+    mana-cost: 5
+    effect:
+      type: PROJECTILE
+      damage: 15
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      projectile: ARROW
+  archer_multishot:
+    display-name: "&aMultishot"
+    description: "Fire 3 arrows in a spread, each dealing 12 damage"
+    type: ACTIVE
+    cooldown: 8
+    mana-cost: 15
+    effect:
+      type: PROJECTILE
+      damage: 12
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      projectile: ARROW
+      count: 3
+  archer_evasion:
+    display-name: "&aEvasion"
+    description: "Gain speed 3 and take 50% less damage for 5 seconds"
+    type: ACTIVE
+    cooldown: 20
+    mana-cost: 15
+    effect:
+      type: BUFF
+      buff-type: DAMAGE_REDUCTION
+      amount: 50
+      duration: 5
+  archer_arrow_storm:
+    display-name: "&aArrow Storm"
+    description: "Rain arrows in a 6 block radius dealing 40 damage each"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 35
+    effect:
+      type: AOE_DAMAGE
+      damage: 40
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 6
+  archer_snipe:
+    display-name: "&aSnipe"
+    description: "Deal 80 damage to a single target with a charged shot"
+    type: ACTIVE
+    cooldown: 40
+    mana-cost: 40
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 80
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+
+  # === HEALER SKILLS ===
+  healer_heal:
+    display-name: "&dHeal"
+    description: "Heal yourself or a target for 30 HP"
+    type: ACTIVE
+    cooldown: 5
+    mana-cost: 10
+    effect:
+      type: HEAL
+      amount: 30
+  healer_blessing:
+    display-name: "&dBlessing"
+    description: "Heal all party members within 10 blocks for 20 HP"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 25
+    effect:
+      type: AOE_HEAL
+      amount: 20
+      radius: 10
+  healer_purify:
+    display-name: "&dPurify"
+    description: "Remove all negative effects from yourself and nearby allies"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 15
+    effect:
+      type: CLEANSE
+      radius: 10
+  healer_divine_light:
+    display-name: "&dDivine Light"
+    description: "Heal all allies in 15 blocks for 50 HP and grant regeneration"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 40
+    effect:
+      type: AOE_HEAL
+      amount: 50
+      radius: 15
+  healer_resurrection:
+    display-name: "&dResurrection"
+    description: "Revive a fallen party member with 50% HP"
+    type: ACTIVE
+    cooldown: 120
+    mana-cost: 80
+    effect:
+      type: REVIVE
+      hp-percent: 50
+
+  # === BERSERKER (Awakened Warrior) ===
+  berserker_rage:
+    display-name: "&4Rage"
+    description: "Deal 30 damage to nearby enemies and gain +10 damage for 10s"
+    type: ACTIVE
+    cooldown: 5
+    mana-cost: 10
+    effect:
+      type: AOE_DAMAGE
+      damage: 30
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 4
+  berserker_ground_slam:
+    display-name: "&4Ground Slam"
+    description: "Deal 40 damage and launch enemies into the air"
+    type: ACTIVE
+    cooldown: 10
+    mana-cost: 15
+    effect:
+      type: AOE_DAMAGE
+      damage: 40
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 6
+      knockback: 2.0
+  berserker_bloodlust:
+    display-name: "&4Bloodlust"
+    description: "Heal for 50% of damage dealt for 15 seconds"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 25
+    effect:
+      type: LIFESTEAL
+      percentage: 50
+      duration: 15
+  berserker_titan_slam:
+    display-name: "&4Titan Slam"
+    description: "Deal 80 damage in a 8 block radius and stun enemies"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 40
+    effect:
+      type: AOE_DAMAGE
+      damage: 80
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 8
+      stun-duration: 3
+  berserker_apocalypse:
+    display-name: "&4&kA&4Apocalypse&kA"
+    description: "Deal 150 damage to all enemies within 15 blocks"
+    type: ACTIVE
+    cooldown: 90
+    mana-cost: 80
+    effect:
+      type: AOE_DAMAGE
+      damage: 150
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 15
+
+  # === ARCHMAGE (Awakened Mage) ===
+  archmage_arcane_bolt:
+    display-name: "&1Arcane Bolt"
+    description: "Fire a bolt dealing 35 damage that pierces enemies"
+    type: ACTIVE
+    cooldown: 2
+    mana-cost: 10
+    effect:
+      type: PROJECTILE
+      damage: 35
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      projectile: FIREBALL
+  archmage_blizzard:
+    display-name: "&1Blizzard"
+    description: "Deal 50 damage and freeze all enemies in 8 blocks"
+    type: ACTIVE
+    cooldown: 20
+    mana-cost: 35
+    effect:
+      type: AOE_DAMAGE
+      damage: 50
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 8
+      slow-duration: 5
+  archmage_arcane_shield:
+    display-name: "&1Arcane Shield"
+    description: "Absorb 100 damage for 20 seconds"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 40
+    effect:
+      type: SHIELD
+      duration: 20
+      absorption: 100
+  archmage_black_hole:
+    display-name: "&1Black Hole"
+    description: "Pull all enemies to a point and deal 90 damage"
+    type: ACTIVE
+    cooldown: 45
+    mana-cost: 60
+    effect:
+      type: AOE_DAMAGE
+      damage: 90
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 12
+      pull: true
+  archmage_supernova:
+    display-name: "&1&kA&1Supernova&kA"
+    description: "Deal 200 damage to everything within 20 blocks"
+    type: ACTIVE
+    cooldown: 120
+    mana-cost: 100
+    effect:
+      type: AOE_DAMAGE
+      damage: 200
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 20
+
+  # === RANGER (Awakened Archer) ===
+  ranger_piercing_shot:
+    display-name: "&2Piercing Shot"
+    description: "Fire an arrow that pierces enemies dealing 30 damage each"
+    type: ACTIVE
+    cooldown: 2
+    mana-cost: 8
+    effect:
+      type: PROJECTILE
+      damage: 30
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      projectile: ARROW
+      pierce: true
+  ranger_volley:
+    display-name: "&2Volley"
+    description: "Fire 5 arrows dealing 20 damage each"
+    type: ACTIVE
+    cooldown: 8
+    mana-cost: 20
+    effect:
+      type: PROJECTILE
+      damage: 20
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      projectile: ARROW
+      count: 5
+  ranger_shadow_step:
+    display-name: "&2Shadow Step"
+    description: "Teleport 15 blocks and gain speed 3 for 5 seconds"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 15
+    effect:
+      type: TELEPORT
+      distance: 15
+  ranger_rain_of_arrows:
+    display-name: "&2Rain of Arrows"
+    description: "Rain 20 arrows in a 10 block radius dealing 50 damage each"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 40
+    effect:
+      type: AOE_DAMAGE
+      damage: 50
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 10
+  ranger_death_mark:
+    display-name: "&2&kA&2Death Mark&kA"
+    description: "Mark a target to take 50% extra damage for 10 seconds"
+    type: ACTIVE
+    cooldown: 60
+    mana-cost: 60
+    effect:
+      type: DEBUFF
+      debuff-type: VULNERABILITY
+      amount: 50
+      duration: 10
+
+  # === CLERIC (Awakened Healer) ===
+  cleric_divine_heal:
+    display-name: "&5Divine Heal"
+    description: "Heal yourself or target for 60 HP"
+    type: ACTIVE
+    cooldown: 3
+    mana-cost: 10
+    effect:
+      type: HEAL
+      amount: 60
+  cleric_sanctuary:
+    display-name: "&5Sanctuary"
+    description: "Create a zone that heals allies for 10 HP/s for 15 seconds"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 40
+    effect:
+      type: ZONE_HEAL
+      amount-per-second: 10
+      duration: 15
+      radius: 8
+  cleric_cleanse:
+    display-name: "&5Cleanse"
+    description: "Remove all negative effects and grant immunity for 5 seconds"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 20
+    effect:
+      type: CLEANSE
+      radius: 15
+      immunity-duration: 5
+  cleric_judgment:
+    display-name: "&5Judgment"
+    description: "Deal 100 damage to all enemies in 12 blocks and heal allies for 30"
+    type: ACTIVE
+    cooldown: 40
+    mana-cost: 50
+    effect:
+      type: AOE_DAMAGE
+      damage: 100
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 12
+      heal-allies: 30
+  cleric_miracle:
+    display-name: "&5&kA&5Miracle&kA"
+    description: "Fully heal all allies and revive all fallen party members"
+    type: ACTIVE
+    cooldown: 180
+    mana-cost: 100
+    effect:
+      type: FULL_HEAL
+      radius: 30
+      revive: true
+
+  # === PALADIN ===
+  paladin_holy_strike:
+    display-name: "&fHoly Strike"
+    description: "Strike nearby enemies with holy power"
+    type: ACTIVE
+    cooldown: 4
+    mana-cost: 8
+    effect:
+      type: CONE_DAMAGE
+      damage: 24
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 6
+      knockback: 0.5
+  paladin_divine_shield:
+    display-name: "&fDivine Shield"
+    description: "Gain powerful resistance for 12 seconds"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 25
+    effect:
+      type: SHIELD
+      duration: 12
+      absorption: 60
+  paladin_lay_on_hands:
+    display-name: "&fLay on Hands"
+    description: "Heal yourself for 45 HP"
+    type: ACTIVE
+    cooldown: 18
+    mana-cost: 25
+    effect:
+      type: HEAL
+      amount: 45
+  paladin_consecration:
+    display-name: "&fConsecration"
+    description: "Damage enemies and heal allies around you"
+    type: ACTIVE
+    cooldown: 35
+    mana-cost: 40
+    effect:
+      type: AOE_DAMAGE
+      damage: 45
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 7
+      heal-allies: 20
+  paladin_judgment_wrath:
+    display-name: "&fJudgment of Wrath"
+    description: "Unleash a devastating holy judgment"
+    type: ACTIVE
+    cooldown: 75
+    mana-cost: 70
+    effect:
+      type: AOE_DAMAGE
+      damage: 140
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 12
+
+  # === ASSASSIN ===
+  assassin_shadow_strike:
+    display-name: "&8Shadow Strike"
+    description: "Deal heavy damage to the enemy in front of you"
+    type: ACTIVE
+    cooldown: 4
+    mana-cost: 6
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 28
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+  assassin_dash:
+    display-name: "&8Shadow Dash"
+    description: "Dash forward and damage nearby enemies"
+    type: ACTIVE
+    cooldown: 8
+    mana-cost: 12
+    effect:
+      type: DASH
+      distance: 8
+      damage: 20
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 3
+  assassin_poison_blade:
+    display-name: "&8Poison Blade"
+    description: "Strike and weaken a nearby enemy"
+    type: ACTIVE
+    cooldown: 12
+    mana-cost: 15
+    effect:
+      type: LIFESTEAL_SINGLE
+      damage: 35
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 30
+  assassin_shadow_burst:
+    display-name: "&8Shadow Burst"
+    description: "Explode with dark energy around you"
+    type: ACTIVE
+    cooldown: 25
+    mana-cost: 30
+    effect:
+      type: AOE_DAMAGE
+      damage: 65
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 5
+  assassin_execution:
+    display-name: "&8Execution"
+    description: "A deadly finishing blow"
+    type: ACTIVE
+    cooldown: 60
+    mana-cost: 55
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 180
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+
+  # === SHAMAN ===
+  shaman_lightning_bolt:
+    display-name: "&2Lightning Bolt"
+    description: "Call lightning onto a nearby enemy"
+    type: ACTIVE
+    cooldown: 4
+    mana-cost: 10
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 25
+      damage-type: MAGIC
+      damage-scaling: 1.0
+  shaman_healing_wave:
+    display-name: "&2Healing Wave"
+    description: "Heal yourself and nearby allies"
+    type: ACTIVE
+    cooldown: 12
+    mana-cost: 20
+    effect:
+      type: AOE_HEAL
+      amount: 35
+      radius: 8
+  shaman_earth_shield:
+    display-name: "&2Earth Shield"
+    description: "Gain resistance and extra protection"
+    type: ACTIVE
+    cooldown: 25
+    mana-cost: 25
+    effect:
+      type: SHIELD
+      duration: 15
+      absorption: 50
+  shaman_storm_surge:
+    display-name: "&2Storm Surge"
+    description: "Damage and slow all enemies around you"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 35
+    effect:
+      type: AOE_DAMAGE
+      damage: 65
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 8
+      slow-duration: 5
+  shaman_spirit_guardian:
+    display-name: "&2Spirit Guardian"
+    description: "Fully heal yourself and allies nearby"
+    type: ACTIVE
+    cooldown: 90
+    mana-cost: 70
+    effect:
+      type: FULL_HEAL
+      radius: 10
+
+  # === DRAGON WARRIOR ===
+  dragon_warrior_dragon_breath:
+    display-name: "&6Dragon Breath"
+    description: "Blast enemies in a cone with dragon fire"
+    type: ACTIVE
+    cooldown: 6
+    mana-cost: 12
+    effect:
+      type: CONE_DAMAGE
+      damage: 35
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 8
+  dragon_warrior_dragon_leap:
+    display-name: "&6Dragon Leap"
+    description: "Leap forward and slam the ground"
+    type: ACTIVE
+    cooldown: 12
+    mana-cost: 18
+    effect:
+      type: DASH
+      distance: 10
+      damage: 40
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 4
+  dragon_warrior_wing_slash:
+    display-name: "&6Wing Slash"
+    description: "Launch a powerful ranged slash"
+    type: ACTIVE
+    cooldown: 8
+    mana-cost: 15
+    effect:
+      type: PROJECTILE
+      projectile: FIREBALL
+      damage: 45
+      damage-type: MAGIC
+      damage-scaling: 1.0
+  dragon_warrior_fire_storm:
+    display-name: "&6Fire Storm"
+    description: "Burn enemies in a wide area"
+    type: ACTIVE
+    cooldown: 35
+    mana-cost: 45
+    effect:
+      type: AOE_DAMAGE
+      damage: 85
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 10
+      slow-duration: 4
+  dragon_warrior_dragon_fury:
+    display-name: "&6Dragon Fury"
+    description: "Unleash a massive wave of dragon power"
+    type: ACTIVE
+    cooldown: 90
+    mana-cost: 80
+    effect:
+      type: AOE_DAMAGE
+      damage: 170
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 14
+
+  # === BARD ===
+  bard_inspiring_anthem:
+    display-name: "&eInspiring Anthem"
+    description: "Buff yourself and allies with strength and speed"
+    type: ACTIVE
+    cooldown: 20
+    mana-cost: 18
+    effect:
+      type: BUFF
+      buff-type: DAMAGE
+      amount: 8
+      duration: 12
+  bard_healing_melody:
+    display-name: "&eHealing Melody"
+    description: "Heal all nearby allies"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 25
+    effect:
+      type: AOE_HEAL
+      amount: 30
+      radius: 10
+  bard_dissonant_chord:
+    display-name: "&eDissonant Chord"
+    description: "Weaken and damage nearby enemies"
+    type: ACTIVE
+    cooldown: 18
+    mana-cost: 25
+    effect:
+      type: AOE_DAMAGE
+      damage: 40
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 8
+      slow-duration: 5
+  bard_song_of_war:
+    display-name: "&eSong of War"
+    description: "Greatly empower the party"
+    type: ACTIVE
+    cooldown: 45
+    mana-cost: 45
+    effect:
+      type: BUFF
+      buff-type: DAMAGE
+      amount: 15
+      duration: 20
+  bard_grand_finale:
+    display-name: "&eGrand Finale"
+    description: "A devastating performance that damages all enemies"
+    type: ACTIVE
+    cooldown: 80
+    mana-cost: 75
+    effect:
+      type: AOE_DAMAGE
+      damage: 130
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 15
+
+  # === SUMMONER ===
+  summoner_arcane_fist:
+    display-name: "&5Arcane Fist"
+    description: "Empower your fist with magic and strike an enemy"
+    type: ACTIVE
+    cooldown: 4
+    mana-cost: 8
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 30
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+  summoner_stone_armor:
+    display-name: "&5Stone Armor"
+    description: "Become a living fortress"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 30
+    effect:
+      type: SHIELD
+      duration: 18
+      absorption: 80
+  summoner_power_surge:
+    display-name: "&5Power Surge"
+    description: "Strengthen your body and damage"
+    type: ACTIVE
+    cooldown: 25
+    mana-cost: 25
+    effect:
+      type: BUFF
+      buff-type: DAMAGE
+      amount: 12
+      duration: 15
+  summoner_earthquake_punch:
+    display-name: "&5Earthquake Punch"
+    description: "Send a shockwave through the ground"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 40
+    effect:
+      type: AOE_DAMAGE
+      damage: 90
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 8
+      knockback: 1.5
+  summoner_titan_form:
+    display-name: "&5Titan Form"
+    description: "Become an unstoppable magical titan"
+    type: ACTIVE
+    cooldown: 100
+    mana-cost: 85
+    effect:
+      type: BUFF
+      buff-type: DAMAGE_REDUCTION
+      amount: 25
+      duration: 25
+
+  # === REAPER ===
+  reaper_soul_slash:
+    display-name: "&4Soul Slash"
+    description: "Slash an enemy and steal its life"
+    type: ACTIVE
+    cooldown: 4
+    mana-cost: 7
+    effect:
+      type: LIFESTEAL_SINGLE
+      damage: 32
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 40
+  reaper_shadow_dash:
+    display-name: "&4Shadow Dash"
+    description: "Dash through enemies and drain their life"
+    type: ACTIVE
+    cooldown: 9
+    mana-cost: 14
+    effect:
+      type: DASH
+      distance: 9
+      damage: 30
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 3
+  reaper_soul_harvest:
+    display-name: "&4Soul Harvest"
+    description: "Damage all nearby enemies and heal from their souls"
+    type: ACTIVE
+    cooldown: 18
+    mana-cost: 25
+    effect:
+      type: LIFESTEAL_AOE
+      damage: 45
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 35
+      radius: 6
+  reaper_death_coil:
+    display-name: "&4Death Coil"
+    description: "Launch a long-range soul projectile"
+    type: ACTIVE
+    cooldown: 12
+    mana-cost: 20
+    effect:
+      type: LIFESTEAL_SINGLE
+      damage: 70
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      percentage: 30
+  reaper_reaper_dance:
+    display-name: "&4Reaper Dance"
+    description: "Spin through enemies in a storm of life-stealing blades"
+    type: ACTIVE
+    cooldown: 65
+    mana-cost: 65
+    effect:
+      type: LIFESTEAL_AOE
+      damage: 120
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 45
+      radius: 10
+
+  # === MONK ===
+  monk_palm_strike:
+    display-name: "&6Palm Strike"
+    description: "A powerful close-range martial strike"
+    type: ACTIVE
+    cooldown: 3
+    mana-cost: 5
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 28
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      knockback: 1
+  monk_iron_body:
+    display-name: "&6Iron Body"
+    description: "Harden your body against all attacks"
+    type: ACTIVE
+    cooldown: 25
+    mana-cost: 20
+    effect:
+      type: SHIELD
+      duration: 12
+      absorption: 65
+  monk_chi_burst:
+    display-name: "&6Chi Burst"
+    description: "Release chi in all directions"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 20
+    effect:
+      type: AOE_DAMAGE
+      damage: 55
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 6
+      knockback: 1
+  monk_flying_dragon:
+    display-name: "&6Flying Dragon"
+    description: "Dash into battle with a devastating strike"
+    type: ACTIVE
+    cooldown: 14
+    mana-cost: 22
+    effect:
+      type: DASH
+      distance: 10
+      damage: 65
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 4
+  monk_enlightenment:
+    display-name: "&6Enlightenment"
+    description: "Achieve perfect balance of power and defense"
+    type: ACTIVE
+    cooldown: 75
+    mana-cost: 60
+    effect:
+      type: FULL_HEAL
+      radius: 0
+
+  # === AWAKENED NEW CLASSES ===
+  templar_holy_cleave:
+    display-name: "&fTemplar Holy Cleave"
+    description: "Cleave all enemies before you with holy fire"
+    type: ACTIVE
+    cooldown: 4
+    mana-cost: 10
+    effect:
+      type: CONE_DAMAGE
+      damage: 55
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 8
+  templar_aegis:
+    display-name: "&fTemplar Aegis"
+    description: "Become nearly invulnerable"
+    type: ACTIVE
+    cooldown: 35
+    mana-cost: 35
+    effect:
+      type: SHIELD
+      duration: 18
+      absorption: 140
+  templar_divine_heal:
+    display-name: "&fTemplar Divine Heal"
+    description: "Heal yourself and nearby allies for a large amount"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 30
+    effect:
+      type: AOE_HEAL
+      amount: 65
+      radius: 10
+  templar_hallowed_ground:
+    display-name: "&fHallowed Ground"
+    description: "Destroy enemies and heal allies in sacred ground"
+    type: ACTIVE
+    cooldown: 40
+    mana-cost: 50
+    effect:
+      type: AOE_DAMAGE
+      damage: 110
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 12
+      heal-allies: 35
+  templar_crusade:
+    display-name: "&fCrusade"
+    description: "The ultimate holy assault"
+    type: ACTIVE
+    cooldown: 100
+    mana-cost: 100
+    effect:
+      type: AOE_DAMAGE
+      damage: 240
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 18
+
+  nightblade_shadow_rip:
+    display-name: "&8Nightblade Shadow Rip"
+    description: "Rip through a target for massive damage"
+    type: ACTIVE
+    cooldown: 3
+    mana-cost: 8
+    effect:
+      type: LIFESTEAL_SINGLE
+      damage: 65
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 45
+  nightblade_phase_dash:
+    display-name: "&8Phase Dash"
+    description: "Blink forward in a blur of shadow"
+    type: ACTIVE
+    cooldown: 7
+    mana-cost: 12
+    effect:
+      type: DASH
+      distance: 14
+      damage: 50
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 3
+  nightblade_death_mark:
+    display-name: "&8Death Mark"
+    description: "Mark a target with a lethal curse"
+    type: ACTIVE
+    cooldown: 20
+    mana-cost: 25
+    effect:
+      type: DEBUFF
+      debuff-type: VULNERABILITY
+      amount: 50
+      duration: 12
+  nightblade_carnage:
+    display-name: "&8Carnage"
+    description: "Tear apart everything around you"
+    type: ACTIVE
+    cooldown: 25
+    mana-cost: 40
+    effect:
+      type: LIFESTEAL_AOE
+      damage: 100
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 40
+      radius: 8
+  nightblade_oblivion:
+    display-name: "&8Oblivion"
+    description: "Erase a target from existence"
+    type: ACTIVE
+    cooldown: 90
+    mana-cost: 90
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 300
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+
+  spiritlord_chain_lightning:
+    display-name: "&2Chain Lightning"
+    description: "Unleash a devastating lightning strike"
+    type: ACTIVE
+    cooldown: 3
+    mana-cost: 12
+    effect:
+      type: AOE_DAMAGE
+      damage: 60
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 5
+  spiritlord_spirit_wave:
+    display-name: "&2Spirit Wave"
+    description: "Send a wave that heals all allies"
+    type: ACTIVE
+    cooldown: 12
+    mana-cost: 25
+    effect:
+      type: AOE_HEAL
+      amount: 75
+      radius: 12
+  spiritlord_spirit_shield:
+    display-name: "&2Spirit Shield"
+    description: "Protect yourself and allies with spirits"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 35
+    effect:
+      type: SHIELD
+      duration: 20
+      absorption: 100
+  spiritlord_thunderstorm:
+    display-name: "&2Thunderstorm"
+    description: "Call down a storm of lightning"
+    type: ACTIVE
+    cooldown: 40
+    mana-cost: 55
+    effect:
+      type: AOE_DAMAGE
+      damage: 150
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 14
+      slow-duration: 5
+  spiritlord_ancestral_wrath:
+    display-name: "&2Ancestral Wrath"
+    description: "Unleash the fury of your ancestors"
+    type: ACTIVE
+    cooldown: 100
+    mana-cost: 100
+    effect:
+      type: AOE_DAMAGE
+      damage: 280
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 20
+
+  dragon_lord_inferno_breath:
+    display-name: "&6Inferno Breath"
+    description: "Burn a massive cone of enemies"
+    type: ACTIVE
+    cooldown: 5
+    mana-cost: 15
+    effect:
+      type: CONE_DAMAGE
+      damage: 90
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 12
+  dragon_lord_sky_dive:
+    display-name: "&6Sky Dive"
+    description: "Soar forward and crash down with dragon force"
+    type: ACTIVE
+    cooldown: 10
+    mana-cost: 20
+    effect:
+      type: DASH
+      distance: 14
+      damage: 100
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 5
+  dragon_lord_dragon_claw:
+    display-name: "&6Dragon Claw"
+    description: "Launch a ranged claw of fire"
+    type: ACTIVE
+    cooldown: 6
+    mana-cost: 18
+    effect:
+      type: PROJECTILE
+      projectile: FIREBALL
+      damage: 110
+      damage-type: MAGIC
+      damage-scaling: 1.0
+  dragon_lord_meteor_storm:
+    display-name: "&6Meteor Storm"
+    description: "Rain destruction upon a vast area"
+    type: ACTIVE
+    cooldown: 45
+    mana-cost: 65
+    effect:
+      type: AOE_DAMAGE
+      damage: 220
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 16
+  dragon_lord_ancient_wrath:
+    display-name: "&6Ancient Dragon Wrath"
+    description: "Unleash the ultimate dragon attack"
+    type: ACTIVE
+    cooldown: 120
+    mana-cost: 110
+    effect:
+      type: AOE_DAMAGE
+      damage: 400
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 24
+
+  maestro_battle_hymn:
+    display-name: "&eBattle Hymn"
+    description: "Greatly increase ally damage and speed"
+    type: ACTIVE
+    cooldown: 20
+    mana-cost: 25
+    effect:
+      type: BUFF
+      buff-type: DAMAGE
+      amount: 20
+      duration: 20
+  maestro_life_symphony:
+    display-name: "&eLife Symphony"
+    description: "Restore health to every ally nearby"
+    type: ACTIVE
+    cooldown: 18
+    mana-cost: 35
+    effect:
+      type: AOE_HEAL
+      amount: 100
+      radius: 15
+  maestro_dirge:
+    display-name: "&eDirge of Weakness"
+    description: "Cripple and slow every enemy"
+    type: ACTIVE
+    cooldown: 22
+    mana-cost: 35
+    effect:
+      type: AOE_EFFECT
+      duration: 12
+      radius: 15
+  maestro_war_anthem:
+    display-name: "&eWar Anthem"
+    description: "Empower allies with overwhelming strength"
+    type: ACTIVE
+    cooldown: 50
+    mana-cost: 65
+    effect:
+      type: BUFF
+      buff-type: DAMAGE
+      amount: 30
+      duration: 30
+  maestro_apocalypse_crescendo:
+    display-name: "&eApocalypse Crescendo"
+    description: "End the performance with a destructive finale"
+    type: ACTIVE
+    cooldown: 120
+    mana-cost: 100
+    effect:
+      type: AOE_DAMAGE
+      damage: 250
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 20
+
+  warlock_arcane_barrage:
+    display-name: "&5Arcane Barrage"
+    description: "Strike enemies with a barrage of arcane power"
+    type: ACTIVE
+    cooldown: 3
+    mana-cost: 15
+    effect:
+      type: PROJECTILE
+      projectile: FIREBALL
+      count: 3
+      damage: 75
+      damage-type: MAGIC
+      damage-scaling: 1.0
+  warlock_iron_skin:
+    display-name: "&5Iron Skin"
+    description: "Turn your body into magical stone"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 40
+    effect:
+      type: SHIELD
+      duration: 25
+      absorption: 160
+  warlock_arcane_empower:
+    display-name: "&5Arcane Empowerment"
+    description: "Empower every aspect of your combat ability"
+    type: ACTIVE
+    cooldown: 35
+    mana-cost: 45
+    effect:
+      type: BUFF
+      buff-type: DAMAGE
+      amount: 25
+      duration: 25
+  warlock_seismic_fist:
+    display-name: "&5Seismic Fist"
+    description: "Punch the earth and shatter all enemies"
+    type: ACTIVE
+    cooldown: 35
+    mana-cost: 60
+    effect:
+      type: AOE_DAMAGE
+      damage: 200
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      radius: 12
+      knockback: 2
+  warlock_colossus_form:
+    display-name: "&5Colossus Form"
+    description: "Become an indestructible magical colossus"
+    type: ACTIVE
+    cooldown: 120
+    mana-cost: 110
+    effect:
+      type: BUFF
+      buff-type: DAMAGE_REDUCTION
+      amount: 40
+      duration: 35
+
+  deathbringer_soul_rend:
+    display-name: "&4Soul Rend"
+    description: "Tear the soul from a nearby enemy"
+    type: ACTIVE
+    cooldown: 3
+    mana-cost: 10
+    effect:
+      type: LIFESTEAL_SINGLE
+      damage: 100
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 50
+  deathbringer_void_dash:
+    display-name: "&4Void Dash"
+    description: "Dash through the void and drain life"
+    type: ACTIVE
+    cooldown: 6
+    mana-cost: 16
+    effect:
+      type: DASH
+      distance: 16
+      damage: 90
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 4
+  deathbringer_soul_tempest:
+    display-name: "&4Soul Tempest"
+    description: "A storm of souls tears through enemies"
+    type: ACTIVE
+    cooldown: 20
+    mana-cost: 35
+    effect:
+      type: LIFESTEAL_AOE
+      damage: 150
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 50
+      radius: 10
+  deathbringer_death_spike:
+    display-name: "&4Death Spike"
+    description: "Send a long-range spike of death"
+    type: ACTIVE
+    cooldown: 12
+    mana-cost: 30
+    effect:
+      type: LIFESTEAL_SINGLE
+      damage: 200
+      damage-type: MAGIC
+      damage-scaling: 1.0
+      percentage: 40
+  deathbringer_apocalypse:
+    display-name: "&4Death Apocalypse"
+    description: "Harvest every soul in a massive area"
+    type: ACTIVE
+    cooldown: 120
+    mana-cost: 110
+    effect:
+      type: LIFESTEAL_AOE
+      damage: 350
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      percentage: 60
+      radius: 22
+
+  grandmaster_iron_palm:
+    display-name: "&6Iron Palm"
+    description: "Strike with perfected martial force"
+    type: ACTIVE
+    cooldown: 3
+    mana-cost: 8
+    effect:
+      type: SINGLE_DAMAGE
+      damage: 90
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      knockback: 1.5
+  grandmaster_diamond_body:
+    display-name: "&6Diamond Body"
+    description: "Your body becomes harder than diamond"
+    type: ACTIVE
+    cooldown: 30
+    mana-cost: 35
+    effect:
+      type: SHIELD
+      duration: 20
+      absorption: 150
+  grandmaster_chi_eruption:
+    display-name: "&6Chi Eruption"
+    description: "Explode with perfected chi energy"
+    type: ACTIVE
+    cooldown: 15
+    mana-cost: 35
+    effect:
+      type: AOE_DAMAGE
+      damage: 140
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 9
+      knockback: 1.5
+  grandmaster_dragon_ascension:
+    display-name: "&6Dragon Ascension"
+    description: "Dash through enemies with the spirit of a dragon"
+    type: ACTIVE
+    cooldown: 12
+    mana-cost: 30
+    effect:
+      type: DASH
+      distance: 14
+      damage: 180
+      damage-type: PHYSICAL
+      damage-scaling: 1.0
+      radius: 5
+  grandmaster_transcendence:
+    display-name: "&6Transcendence"
+    description: "Reach perfect enlightenment and restore yourself"
+    type: ACTIVE
+    cooldown: 100
+    mana-cost: 80
+    effect:
+      type: FULL_HEAL
+      radius: 12

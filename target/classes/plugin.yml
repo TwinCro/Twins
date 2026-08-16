@@ -1,0 +1,64 @@
+name: DungeonRealms
+version: 1.0.0
+main: com.dungeonrealms.DungeonRealms
+api-version: '1.21'
+authors: [DungeonRealmsTeam]
+description: MMORPG class and dungeon system plugin
+
+commands:
+  class:
+    description: Choose, view, or manage your class
+    usage: /class [choose <classname> | info | list]
+    aliases: [cls]
+  skills:
+    description: View, bind, and use your skills
+    usage: /skills [list | info <skill> | bind <skill> <1-6> | unbind <1-6> | use <skill> | bar]
+  level:
+    description: View your level and XP
+    usage: /level [player]
+    aliases: [lvl]
+  party:
+    description: Manage your party
+    usage: /party [invite <player> | accept | leave | list]
+  dungeon:
+    description: Enter or manage dungeons
+    usage: /dungeon [enter <name> | list | leave]
+    aliases: [dg]
+  items:
+    description: View item info or give items (admin)
+    usage: /items [give <player> <itemid> | info]
+  awaken:
+    description: Awaken your class at max level
+    usage: /awaken
+  dradmin:
+    description: Admin commands for DungeonRealms
+    usage: /dradmin [reload | setlevel <player> <level> | giveitem <player> <itemid>]
+    permission: dungeonrealms.admin
+  skillregion:
+    description: Manage skill-use regions (admin)
+    usage: /skillregion [create <name> <radius> | createbox <name> | list | remove <name> | reload]
+    permission: dungeonrealms.admin
+  guild:
+    description: Manage your guild and land claims
+    usage: /guild [create <name> | invite <player> | accept | leave | disband | promote <player> | demote <player> | claim | unclaim | expand | info | sethome | home | delhome]
+    aliases: [g]
+  home:
+    description: Teleport to a home
+    usage: /home [name]
+  sethome:
+    description: Set a home location (up to 3)
+    usage: /sethome [name]
+  delhome:
+    description: Remove a home location
+    usage: /delhome <name>
+  homes:
+    description: List all your homes
+    usage: /homes
+
+permissions:
+  dungeonrealms.player:
+    description: Basic player permissions
+    default: true
+  dungeonrealms.admin:
+    description: Admin permissions
+    default: op
