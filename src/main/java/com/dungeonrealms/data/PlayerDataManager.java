@@ -77,6 +77,7 @@ public class PlayerDataManager {
             Bukkit.getScheduler().runTask(plugin, () -> {
                 if (data.hasClass()) {
                     plugin.getClassManager().applyClassStats(player, data);
+                    data.setSkillBarMode(true);
                 }
             });
         });
@@ -86,16 +87,25 @@ public class PlayerDataManager {
         PlayerData data = cache.get(uuid);
         if (data == null) return;
         supabase.upsertPlayer(data.toJson());
-        for (String skillId : data.getUnlockedSkills()) {
-            boolean equipped = data.getEquippedSkills().contains(skillId);
-            Integer slot = null;
-            for (Map.Entry<Integer, String> entry : data.getSkillSlots().entrySet()) {
-                if (entry.getValue().equals(skillId)) {
-                    slot = entry.getKey();
-                    break;
+
+        supabase.deletePlayerSkills(uuid).thenCompose(v -> {
+            for (String skillId : data.getUnlockedSkills()) {
+                boolean equipped = data.getEquippedSkills().contains(skillId);
+                Integer slot = null;
+                for (Map.Entry<Integer, String> entry : data.getSkillSlots().entrySet()) {
+                    if (entry.getValue().equals(skillId)) {
+                        slot = entry.getKey();
+                        break;
+                    }
                 }
+                supabase.upsertPlayerSkill(uuid, skillId, equipped, slot);
             }
-            supabase.upsertPlayerSkill(uuid, skillId, equipped, slot);
+            return CompletableFuture.completedFuture(null);
+        });
+
+        for (Map.Entry<String, HomeLocation> entry : data.getHomes().entrySet()) {
+            HomeLocation loc = entry.getValue();
+            supabase.upsertPlayerHome(uuid, entry.getKey(), loc.world, loc.x, loc.y, loc.z, loc.yaw, loc.pitch);
         }
     }
 
@@ -128,20 +138,20 @@ public class PlayerDataManager {
 
     public static class PlayerData {
         private final UUID uuid;
-        private String username;
-        private String classId = "";
-        private int level = 1;
-        private long xp = 0;
-        private int mana = 0;
-        private int maxMana = 0;
-        private boolean awakened = false;
-        private int awakeningCount = 0;
-        private long gold = 0;
-        private final Map<String, HomeLocation> homes = new LinkedHashMap<>();
-        private final Set<String> unlockedSkills = new HashSet<>();
-        private final Set<String> equippedSkills = new HashSet<>();
-        private final Map<Integer, String> skillSlots = new HashMap<>();
-        private transient boolean skillBarMode = false;
+        private volatile String username;
+        private volatile String classId = "";
+        private volatile int level = 1;
+        private volatile long xp = 0;
+        private volatile int mana = 0;
+        private volatile int maxMana = 0;
+        private volatile boolean awakened = false;
+        private volatile int awakeningCount = 0;
+        private volatile long gold = 0;
+        private final Map<String, HomeLocation> homes = new ConcurrentHashMap<>();
+        private final Set<String> unlockedSkills = ConcurrentHashMap.newKeySet();
+        private final Set<String> equippedSkills = ConcurrentHashMap.newKeySet();
+        private final Map<Integer, String> skillSlots = new ConcurrentHashMap<>();
+        private volatile boolean skillBarMode = false;
 
         public PlayerData(UUID uuid, String username) {
             this.uuid = uuid;

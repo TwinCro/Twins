@@ -10,7 +10,7 @@ public class SkillManager {
 
     private final DungeonRealms plugin;
     private final Map<String, Skill> skills = new LinkedHashMap<>();
-    private final Map<UUID, Map<String, Long>> cooldowns = new HashMap<>();
+    private final Map<UUID, Map<String, Long>> cooldowns = new ConcurrentHashMap<>();
 
     public SkillManager(DungeonRealms plugin) {
         this.plugin = plugin;
@@ -95,7 +95,7 @@ public class SkillManager {
     }
 
     public void setCooldown(UUID playerUuid, String skillId, int cooldownSeconds) {
-        cooldowns.computeIfAbsent(playerUuid, k -> new HashMap<>())
+        cooldowns.computeIfAbsent(playerUuid, k -> new ConcurrentHashMap<>())
                 .put(skillId, System.currentTimeMillis() + (cooldownSeconds * 1000L));
     }
 

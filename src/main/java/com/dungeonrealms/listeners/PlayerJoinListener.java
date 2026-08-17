@@ -23,8 +23,6 @@ public class PlayerJoinListener implements Listener {
         if (data == null || !data.hasClass()) {
             event.getPlayer().sendMessage("§eYou haven't chosen a class yet! Use §6/class list §eto see available classes.");
             event.getPlayer().sendMessage("§eThen choose with §6/class choose <classname>");
-        } else {
-            data.setSkillBarMode(true);
         }
     }
 }
