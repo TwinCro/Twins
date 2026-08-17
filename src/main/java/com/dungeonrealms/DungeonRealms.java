@@ -92,6 +92,7 @@ public class DungeonRealms extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InventoryClickListener(this), this);
         getServer().getPluginManager().registerEvents(new SkillBarListener(this), this);
         getServer().getPluginManager().registerEvents(new GuildListener(this), this);
+        getServer().getPluginManager().registerEvents(new ClassSwitchListener(this), this);
     }
 
     private void registerCommands() {
@@ -143,6 +144,8 @@ public class DungeonRealms extends JavaPlugin {
         DungeonBuilderCommand dbCmd = new DungeonBuilderCommand(this);
         getCommand("dungeonbuilder").setExecutor(dbCmd);
         getCommand("dungeonbuilder").setTabCompleter(dbCmd);
+        ClassSwitchCommand csCmd = new ClassSwitchCommand(this);
+        getCommand("classswitch").setExecutor(csCmd);
     }
 
     public static DungeonRealms getInstance() {

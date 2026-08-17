@@ -2,6 +2,8 @@ package com.dungeonrealms.classes;
 
 import com.dungeonrealms.DungeonRealms;
 import com.dungeonrealms.data.PlayerDataManager;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
@@ -113,8 +115,12 @@ public class ClassManager {
         double bonusHealth = plugin.getDamageManager().getBonusHealth(player);
         double bonusMana = plugin.getDamageManager().getBonusMana(player);
 
-        player.setMaxHealth(scaledHealth + bonusHealth);
-        player.setHealth(scaledHealth + bonusHealth);
+        double totalHealth = scaledHealth + bonusHealth;
+        AttributeInstance healthAttr = player.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+        if (healthAttr != null) {
+            healthAttr.setBaseValue(Math.max(2.0, totalHealth));
+        }
+        player.setHealth(Math.max(1.0, Math.min(totalHealth, healthAttr != null ? healthAttr.getValue() : 1024.0)));
         player.setFoodLevel(20);
         player.setSaturation(20f);
 

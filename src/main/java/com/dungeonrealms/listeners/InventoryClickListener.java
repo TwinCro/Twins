@@ -15,6 +15,8 @@ public class InventoryClickListener implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        // Placeholder for future skill GUI / class selection GUI
+        if (event.getView().getTitle().equals("§6§lSwitch Class")) {
+            event.setCancelled(true);
+        }
     }
 }

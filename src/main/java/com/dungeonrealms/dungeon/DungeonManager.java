@@ -10,6 +10,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -247,8 +249,7 @@ public class DungeonManager {
                 Location mobLoc = spawnLoc.clone().add(offsetX, 0, offsetZ);
                 LivingEntity mob = (LivingEntity) spawnLoc.getWorld().spawnEntity(mobLoc, wave.getType());
                 double scaledHealth = wave.getHealth() * instance.getHealthMultiplier();
-                mob.setMaxHealth(scaledHealth);
-                mob.setHealth(scaledHealth);
+                setEntityMaxHealth(mob, scaledHealth);
                 double scaledDamage = wave.getDamage() * instance.getDamageMultiplier();
                 double scaledDefense = wave.getDefense() * instance.getDefenseMultiplier();
                 double scaledMagicDefense = wave.getMagicDefense() * instance.getDefenseMultiplier();
@@ -325,8 +326,7 @@ public class DungeonManager {
 
         LivingEntity boss = (LivingEntity) spawnLoc.getWorld().spawnEntity(spawnLoc, bossConfig.getType());
         double scaledBossHealth = bossConfig.getHealth() * instance.getHealthMultiplier();
-        boss.setMaxHealth(scaledBossHealth);
-        boss.setHealth(scaledBossHealth);
+        setEntityMaxHealth(boss, scaledBossHealth);
         double scaledBossDamage = bossConfig.getDamage() * instance.getDamageMultiplier();
         double scaledBossDefense = bossConfig.getDefense() * instance.getDefenseMultiplier();
         double scaledBossMagicDefense = bossConfig.getMagicDefense() * instance.getDefenseMultiplier();
@@ -343,6 +343,14 @@ public class DungeonManager {
         for (Player p : instance.getPlayers()) {
             p.sendMessage("§4§lThe boss has appeared: " + bossConfig.getName() + "!");
         }
+    }
+
+    private void setEntityMaxHealth(LivingEntity entity, double health) {
+        AttributeInstance attr = entity.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+        if (attr != null) {
+            attr.setBaseValue(Math.max(1.0, health));
+        }
+        entity.setHealth(Math.max(1.0, Math.min(health, attr != null ? attr.getValue() : 1024.0)));
     }
 
     public void onBossDeath(DungeonInstance instance) {
@@ -462,8 +470,7 @@ public class DungeonManager {
 
                 LivingEntity entity = (LivingEntity) loc.getWorld().spawnEntity(loc, mob.getType());
                 double scaledHp = mob.getHealth() * instance.getHealthMultiplier();
-                entity.setMaxHealth(scaledHp);
-                entity.setHealth(scaledHp);
+                setEntityMaxHealth(entity, scaledHp);
                 double scaledDmg = mob.getDamage() * instance.getDamageMultiplier();
                 double scaledDef = mob.getDefense() * instance.getDefenseMultiplier();
                 double scaledMdef = mob.getMagicDefense() * instance.getDefenseMultiplier();

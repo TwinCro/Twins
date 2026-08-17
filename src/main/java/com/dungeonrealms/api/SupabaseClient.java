@@ -359,6 +359,37 @@ public class SupabaseClient {
         return sendRequest(url, "DELETE", null).thenRun(() -> {});
     }
 
+    // ==================== CLASS PROGRESS ====================
+
+    public CompletableFuture<JsonObject> getClassProgress(UUID playerUuid, String classId) {
+        String url = supabaseUrl + "/rest/v1/dr_class_progress?player_uuid=eq." + playerUuid.toString()
+                + "&class_id=eq." + classId + "&limit=1";
+        return sendRequest(url, "GET", null).thenApply(response -> {
+            if (response == null || response.body() == null || response.body().isBlank()) return null;
+            var array = JsonParser.parseString(response.body()).getAsJsonArray();
+            return array.isEmpty() ? null : array.get(0).getAsJsonObject();
+        });
+    }
+
+    public CompletableFuture<JsonArray> getAllClassProgress(UUID playerUuid) {
+        String url = supabaseUrl + "/rest/v1/dr_class_progress?player_uuid=eq." + playerUuid.toString();
+        return sendRequest(url, "GET", null).thenApply(response -> {
+            if (response == null || response.body() == null || response.body().isBlank()) return new JsonArray();
+            return JsonParser.parseString(response.body()).getAsJsonArray();
+        });
+    }
+
+    public CompletableFuture<Void> upsertClassProgress(UUID playerUuid, String classId, int level, long xp, String skillsJson) {
+        JsonObject data = new JsonObject();
+        data.addProperty("player_uuid", playerUuid.toString());
+        data.addProperty("class_id", classId);
+        data.addProperty("level", level);
+        data.addProperty("xp", xp);
+        data.addProperty("skills", skillsJson);
+        String url = supabaseUrl + "/rest/v1/dr_class_progress?on_conflict=player_uuid,class_id";
+        return sendRequest(url, "POST", data.toString()).thenRun(() -> {});
+    }
+
     // ==================== PLAYER HOMES (MULTI-HOME) ====================
 
     public CompletableFuture<JsonArray> getPlayerHomes(UUID playerUuid) {

@@ -68,6 +68,9 @@ commands:
     usage: /dungeonbuilder [create | setcorner1 | setcorner2 | setdoor | setmarker | addmob | setboss | donemobs | save | cancel | status | list | delete]
     permission: dungeonrealms.admin
     aliases: [dgbuilder, db]
+  classswitch:
+    description: Get a class switcher item
+    usage: /classswitch
 
 permissions:
   dungeonrealms.player:

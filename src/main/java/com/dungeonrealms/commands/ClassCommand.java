@@ -94,7 +94,7 @@ public class ClassCommand implements CommandExecutor, TabCompleter {
         }
         if (data.hasClass() && !data.isAwakened()) {
             player.sendMessage("§cYou already have a class: " + data.getClassId());
-            player.sendMessage("§eUse /awaken at level 60 to evolve your class.");
+            player.sendMessage("§eUse the §6Class Switcher §eitem to switch classes, or §e/awaken §eat level 60 to evolve.");
             return;
         }
 
@@ -112,8 +112,11 @@ public class ClassCommand implements CommandExecutor, TabCompleter {
         data.setSkillBarMode(true);
         plugin.getPlayerDataManager().savePlayer(player.getUniqueId());
 
+        player.getInventory().addItem(com.dungeonrealms.listeners.ClassSwitchListener.createSwitcherItem());
+
         player.sendMessage("§a§lYou have chosen: " + ChatColor.translateAlternateColorCodes('&', gc.getDisplayName()));
         player.sendMessage("§7" + gc.getDescription());
+        player.sendMessage("§7You received a §6Class Switcher§7! Right-click it to switch classes anytime.");
     }
 
     private void showInfo(Player player) {

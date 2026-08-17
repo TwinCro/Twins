@@ -1,6 +1,7 @@
 package com.dungeonrealms.listeners;
 
 import com.dungeonrealms.DungeonRealms;
+import com.dungeonrealms.data.PlayerDataManager;
 import com.dungeonrealms.items.GameItem;
 import com.dungeonrealms.items.ItemManager;
 import org.bukkit.entity.Player;
@@ -37,6 +38,12 @@ public class PlayerInteractListener implements Listener {
 
         ItemStack item = player.getInventory().getItemInMainHand();
         if (item == null) return;
+
+        if (ClassSwitchListener.isSwitcherItem(item)) {
+            event.setCancelled(true);
+            new ClassSwitchListener(plugin).openSwitchMenu(player);
+            return;
+        }
 
         ItemManager im = plugin.getItemManager();
         GameItem gameItem = im.getGameItemFromStack(item);
